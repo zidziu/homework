@@ -59,7 +59,6 @@ export class Search extends Component {
         ` https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MM_KEY}&language=en-US&query=${searchInput}}`
       )
       .then(res => {
-        console.log(res.data);
         let myMovies = [];
 
         this.setState({
@@ -79,9 +78,6 @@ export class Search extends Component {
         this.setState({
           movie_list: myMovies
         });
-
-        console.log(this.state.movie_list);
-        console.log(res.data);
       })
       .catch(err => console.log(err));
   }
